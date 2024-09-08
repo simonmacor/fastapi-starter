@@ -1,8 +1,8 @@
 [![CI](https://github.com/simonmacor/fastapi-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/simonmacor/fastapi-starter/actions/workflows/ci.yml)
 
-# FastAPI Web Starter Kit
+# FastAPI Starter Kit
 
-**FastAPI Web Starter Kit** – a base project designed to help you develop web applications using Python and the **FastAPI** framework. This starter kit is built to simplify backend development with a pre-configured architecture for testing, database management, and mocking third-party services.
+**FastAPI Starter Kit** – a base project designed to help you develop web applications using Python and the **FastAPI** framework. This starter kit is built to simplify backend development with a pre-configured architecture for testing, database management, and mocking third-party services.
 
 ## Features
 
