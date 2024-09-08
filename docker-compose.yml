@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  mountebank:
+    image: bbyars/mountebank:latest
+    container_name: mountebank
+    ports:
+      - "2525:2525"   # Port Mountebank admin interface
+      - "4545:4545"   # Default imposters port
+      - "5555:5555"   # Another imposter port
+    environment:
+      MB_LOGLEVEL: info
+    volumes:
+      - ./imposters:/mnt/imposters  # imposters directory
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: book_user
+      POSTGRES_PASSWORD: book_password
+      POSTGRES_DB: book_recommendation
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - db_network
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - db_network
+
+volumes:
+  pgdata:
+
+networks:
+  db_network:
